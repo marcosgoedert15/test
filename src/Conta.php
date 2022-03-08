@@ -2,11 +2,11 @@
 
 class Conta
 {
-    public string $cpfTitular;
-    public string $nomeTitular;
-    public float $saldo;
+    private string $cpfTitular;
+    private string $nomeTitular;
+    private float $saldo = 0;
 
-    public function sacar(float $valorSaque) 
+    public function sacar(float $valorSaque): void
     {
         if ($valorSaque > $this->saldo) {
             echo "Saldo indisponível";
@@ -16,7 +16,7 @@ class Conta
         $this->saldo -= $valorSaque;
     }
 
-    public function depositar(float $valorDeposito)
+    public function depositar(float $valorDeposito): void
     {
         if ($valorDeposito > 0) {
             echo "Valor precisa ser positivo";
